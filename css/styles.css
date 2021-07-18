@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+body
+{
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: hsl(210, 46%, 95%);
+}
+
+.main_container
+{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.grid_container
+{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas: 
+        "img text";
+        position: absolute;
+        top: 50%;
+        width: 75%;
+        margin: 0 auto;
+        transform: translate(0,-50%);
+}
+
+.image_container
+{
+    grid-area: img;
+    background-image: url("../images/drawers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.text_container
+{
+    grid-area: text;
+    padding: 50px;
+    border-radius: 0 10px 10px 0;
+    background-color: white;
+}
+
+.heading
+{
+    color: hsl(217, 19%, 35%);
+    font-weight: 700;
+    font-size: 1.875rem;
+    margin-bottom: 0;
+}
+
+.description, .date
+{
+    color: hsl(214, 17%, 51%);
+    font-weight: 500;
+}
+
+.bio
+{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.5fr;
+    grid-template-areas: "image name icons";  
+}
+
+.bio_mobile
+{
+    grid-template-columns: 1fr;
+    grid-template-areas: "icons";  
+    background-color: hsl(217, 19%, 35%);
+    border-radius: 10px;
+}
+
+.bio_mobile .bio_image , .bio_mobile .bio_name
+{
+    display: none;
+}
+
+.bio_image
+{
+    display: block;
+    grid-area: image;
+}
+
+.avatar
+{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.bio_name
+{
+    display: block;
+    padding-left: 20px;
+    grid-area: name;
+}
+
+.name
+{
+    color: hsl(217, 19%, 35%);
+    font-weight: 700;
+    margin: 0;
+}
+
+.date
+{
+    margin-top: 0;
+}
+
+.share
+{
+    grid-area: icons;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.social_icons
+{
+    background-color:  hsl(217, 19%, 35%);
+    display: none;
+    justify-content: center;
+    padding: 15px 35px;
+    border-radius: 10px;
+    transform: translate(50%, -100%);
+}
+
+.social_icons_view
+{
+    display: flex;
+}
+
+.bio_mobile .social_icons
+{
+    display: flex;
+    transform: none;
+    flex:auto;
+}
+
+.social_icons p
+{
+    font-size: 12px;
+    color: hsl(212, 23%, 69%);
+    letter-spacing: 2px;
+    display: inline-block;
+    margin: 0;
+    align-self: center;
+    padding-right: 20px;
+}
+.share_btn
+{
+    background-color: hsl(210, 46%, 95%);
+    border: 0;
+    outline: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.bio_mobile .share_btn
+{
+    margin:10px;
+}
+
+.icons
+{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.icons img
+{
+    padding-right: 10px;
+}
+
+@media screen and (max-width:992px) {
+    .grid_container
+    {
+        width: 90%;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+.grid_container 
+{
+    width: 90%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.75fr 1fr;
+    position: unset;
+    transform: none;
+    margin: 50px auto;
+    grid-template-areas: 
+            "img"
+            "text";
+}
+}
